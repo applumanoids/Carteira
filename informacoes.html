@@ -2,291 +2,330 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Informações</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Informações | Minha Saúde Financeira</title>
 
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#16a34a">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="css/style.css">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-83Y4RSJ6YT"></script>
 <script>
  window.dataLayer = window.dataLayer || [];
  function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-83Y4RSJ6YT');
+ gtag('js',new Date());
+ gtag('config','G-83Y4RSJ6YT');
 </script>
 
+<!-- ESTILO INDEPENDENTE PARA EVITAR CONFLITOS -->
 <style>
-/* CORREÇÃO GERAL PARA MOBILE */
+:root {
+ --verde:#16a34a;
+ --verde-escuro:#0f766e;
+ --texto:#172b21;
+ --cinza:#64748b;
+ --fundo:#f1f5f3;
+}
+
 html {
- width: 100%;
- max-width: 100%;
- overflow-x: hidden;
- -webkit-text-size-adjust: 100%;
+ box-sizing:border-box;
+ width:100%;
+ overflow-x:hidden;
+ -webkit-text-size-adjust:100%;
+}
+
+*,*::before,*::after {
+ box-sizing:inherit;
 }
 
 body {
- width: 100%;
- max-width: 100%;
- margin: 0;
- overflow-x: hidden;
- background: #f1f5f3;
+ margin:0;
+ padding:0;
+ width:100%;
+ min-width:0;
+ overflow-x:hidden;
+ background:var(--fundo);
+ color:var(--texto);
+ font-family:Arial,Helvetica,sans-serif;
+ font-size:15px;
+ line-height:1.5;
 }
 
-*, *::before, *::after {
- box-sizing: border-box;
+.info-page {
+ width:100%;
+ max-width:520px;
+ min-width:0;
+ margin:0 auto;
+ padding:18px 15px 30px;
 }
 
-.w.sm {
- width: 100% !important;
- max-width: 600px !important;
- min-width: 0 !important;
- margin: 0 auto !important;
- padding: 16px !important;
+.info-page,
+.info-page * {
+ overflow-wrap:anywhere;
 }
 
-.w.sm * {
- min-width: 0;
+.info-page h1,
+.info-page h2,
+.info-page p,
+.info-page a,
+.info-page span,
+.info-page strong {
+ max-width:100%;
+ white-space:normal;
 }
 
-.w.sm p,
-.w.sm h1,
-.w.sm h2,
-.w.sm small,
-.w.sm b,
-.w.sm a {
- overflow-wrap: anywhere;
- white-space: normal;
-}
-
-/* CABEÇALHO */
-.info-title {
- font-size: clamp(25px, 7vw, 32px);
- font-weight: 800;
- line-height: 1.2;
- margin: 22px 0 18px;
- color: #10251b;
-}
-
+/* VOLTAR */
 .info-back {
- display: inline-flex;
- align-items: center;
- justify-content: center;
- padding: 11px 18px;
- background: #ffffff;
- color: #183528;
- border-radius: 14px;
- text-decoration: none;
- font-size: 15px;
- font-weight: 600;
- box-shadow: 0 3px 12px rgba(0,0,0,.06);
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ background:#fff;
+ color:#173528;
+ text-decoration:none;
+ padding:10px 17px;
+ border-radius:13px;
+ font-size:15px;
+ font-weight:600;
+ box-shadow:0 3px 12px rgba(0,0,0,.05);
 }
 
-/* PRIVACIDADE */
-.info-hero {
- width: 100%;
- padding: 22px 20px;
- border-radius: 22px;
- background: linear-gradient(135deg,#0f766e,#16a34a);
- color: #ffffff;
- display: flex;
- flex-direction: column;
- gap: 10px;
- box-shadow: 0 8px 22px rgba(15,118,110,.12);
+/* TÍTULO */
+.info-title {
+ margin:23px 0 17px;
+ font-size:clamp(24px,6vw,30px);
+ line-height:1.25;
+ font-weight:800;
 }
 
-.info-hero small {
- font-size: 14px;
- line-height: 1.5;
- color: #ffffff;
+/* CARTÃO VERDE */
+.info-privacy {
+ display:block;
+ width:100%;
+ min-width:0;
+ max-width:100%;
+ padding:20px 18px;
+ background:linear-gradient(135deg,#0f766e,#16a34a);
+ border-radius:20px;
+ color:white;
+ box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
-.info-hero strong {
- display: block;
- font-size: clamp(20px, 5.5vw, 25px);
- line-height: 1.3;
- font-weight: 800;
- color: #ffffff;
+.info-privacy-label {
+ display:block;
+ font-size:14px;
+ font-weight:600;
+ margin-bottom:12px;
+ color:white;
+}
+
+.info-privacy-title {
+ display:block;
+ width:100%;
+ max-width:100%;
+ margin:0 0 10px;
+ padding:0;
+ font-size:clamp(19px,5vw,23px);
+ line-height:1.35;
+ font-weight:800;
+ white-space:normal;
+ overflow-wrap:break-word;
+ word-break:normal;
+ color:white;
+}
+
+.info-privacy-desc {
+ display:block;
+ margin:0;
+ font-size:14px;
+ line-height:1.6;
+ color:white;
 }
 
 /* CARTÕES */
 .info-card {
- width: 100%;
- padding: 21px 19px;
- margin-top: 15px;
- background: #ffffff;
- border-radius: 22px;
- box-shadow: 0 4px 18px rgba(0,0,0,.055);
+ display:block;
+ width:100%;
+ min-width:0;
+ max-width:100%;
+ margin-top:15px;
+ padding:20px 17px;
+ background:white;
+ border-radius:20px;
+ box-shadow:0 4px 16px rgba(0,0,0,.05);
 }
 
 .info-card h2 {
- margin: 0 0 16px;
- font-size: 20px;
- line-height: 1.35;
- color: #142b20;
+ margin:0 0 17px;
+ font-size:20px;
+ line-height:1.35;
+ font-weight:700;
 }
 
 .info-card p {
- margin: 0 0 14px;
- font-size: 15px;
- line-height: 1.65;
- color: #263b30;
+ margin:0 0 13px;
+ font-size:14px;
+ line-height:1.65;
 }
 
 .info-card p:last-child {
- margin-bottom: 0;
+ margin-bottom:0;
 }
 
-/* LISTA DE INFORMAÇÕES */
-.info-item {
- display: flex;
- align-items: flex-start;
- gap: 11px;
- margin-bottom: 17px;
+/* INFORMAÇÕES */
+.info-line {
+ display:flex;
+ align-items:flex-start;
+ gap:11px;
+ width:100%;
+ min-width:0;
+ margin-bottom:17px;
 }
 
-.info-item:last-child {
- margin-bottom: 0;
+.info-line:last-child {
+ margin-bottom:0;
 }
 
-.info-icon {
- flex: 0 0 30px;
- width: 30px;
- height: 30px;
- display: flex;
- align-items: center;
- justify-content: center;
- background: #e2f7e9;
- border-radius: 50%;
- color: #07813d;
- font-size: 16px;
- font-weight: 800;
+.info-check {
+ display:flex;
+ flex:0 0 28px;
+ width:28px;
+ height:28px;
+ align-items:center;
+ justify-content:center;
+ background:#e0f5e9;
+ color:#07813d;
+ border-radius:50%;
+ font-size:16px;
+ font-weight:800;
 }
 
-.info-item p {
- flex: 1;
- margin: 0;
+.info-line-text {
+ flex:1 1 0;
+ min-width:0;
+ margin:0 !important;
+ font-size:14px;
+ line-height:1.65;
 }
 
 /* AVISO */
 .info-warning {
- background: #fff6df;
- border: 1px solid #f4d891;
+ background:#fff6e2;
+ border:1px solid #f3d99a;
 }
 
 .info-warning h2 {
- font-size: 18px;
+ font-size:18px;
 }
 
 /* LUMANOIDS */
-.info-brand {
- text-align: center;
+.info-contact {
+ text-align:center;
 }
 
-.info-brand h2 {
- font-size: 19px;
- margin-bottom: 10px;
+.info-contact h2 {
+ font-size:18px;
+ margin-bottom:10px;
 }
 
-.info-brand p {
- font-size: 14px;
- color: #64748b;
- margin-bottom: 18px;
+.info-contact p {
+ color:var(--cinza);
+ margin-bottom:17px;
 }
 
-.brand-name {
- color: #ec4899;
- font-weight: 800;
+.info-pink {
+ color:#ec4899;
+ font-weight:800;
 }
 
 /* BOTÕES */
-.info-btn {
- display: flex !important;
- width: 100%;
- min-height: 55px;
- align-items: center;
- justify-content: center;
- gap: 9px;
- padding: 14px 12px;
- margin-top: 11px;
- border-radius: 15px;
- text-decoration: none !important;
- text-align: center;
- font-size: 15px;
- font-weight: 700;
- line-height: 1.4;
- color: #ffffff !important;
- box-shadow: 0 5px 15px rgba(0,0,0,.08);
+.info-button {
+ display:flex;
+ width:100%;
+ min-height:52px;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ padding:13px 12px;
+ margin-top:10px;
+ border-radius:13px;
+ text-decoration:none;
+ font-size:14px;
+ font-weight:700;
+ line-height:1.4;
+ color:white;
 }
 
-.info-btn.site {
- background: linear-gradient(135deg,#16a34a,#07813d);
+.info-site {
+ background:linear-gradient(135deg,#16a34a,#07813d);
 }
 
-.info-btn.whats {
- background: linear-gradient(135deg,#25d366,#128c7e);
+.info-whatsapp {
+ background:linear-gradient(135deg,#25d366,#128c7e);
 }
 
-/* OUTROS APLICATIVOS */
+/* OUTROS APPS */
 .info-more {
- margin-top: 17px;
- padding: 19px;
- border-radius: 22px;
- background: #ffffff;
- text-align: center;
- box-shadow: 0 4px 18px rgba(0,0,0,.055);
+ margin-top:16px;
+ padding:19px 16px;
+ border-radius:20px;
+ background:white;
+ text-align:center;
+ box-shadow:0 4px 16px rgba(0,0,0,.05);
 }
 
-.info-more-title {
- display: block;
- color: #64748b;
- font-size: 14px;
- margin-bottom: 12px;
+.info-more-label {
+ display:block;
+ font-size:14px;
+ color:var(--cinza);
+ margin-bottom:11px;
 }
 
 .info-more a {
- display: block;
- padding: 15px 12px;
- background: #e8f7ee;
- color: #116534;
- border-radius: 14px;
- text-decoration: none;
- font-size: 16px;
- font-weight: 700;
+ display:block;
+ width:100%;
+ padding:14px 10px;
+ background:#e8f7ee;
+ border-radius:12px;
+ text-decoration:none;
+ color:#116534;
+ font-size:15px;
+ font-weight:700;
 }
 
 /* RODAPÉ */
 .info-footer {
- text-align: center;
- padding: 23px 10px 30px;
- font-size: 13px;
- color: #64748b;
+ padding:24px 10px;
+ text-align:center;
+ font-size:13px;
+ color:var(--cinza);
 }
 
-/* TELAS PEQUENAS */
-@media (max-width: 380px) {
- .w.sm {
-  padding: 12px !important;
+/* CELULARES MENORES */
+@media(max-width:360px) {
+ .info-page {
+  padding:14px 12px 25px;
+ }
+
+ .info-privacy {
+  padding:18px 15px;
+ }
+
+ .info-privacy-title {
+  font-size:19px;
  }
 
  .info-card {
-  padding: 18px 15px;
+  padding:18px 15px;
  }
 
- .info-hero {
-  padding: 20px 16px;
+ .info-title {
+  font-size:24px;
  }
 
- .info-card p {
-  font-size: 14px;
- }
-
- .info-btn {
-  font-size: 14px;
+ .info-line-text {
+  font-size:13px;
  }
 }
 </style>
@@ -294,14 +333,12 @@ body {
 
 <body>
 
-<div class="w sm">
+<main class="info-page">
 
  <!-- VOLTAR -->
- <div class="top">
-  <a class="info-back" href="index.html">
-   ‹ Voltar
-  </a>
- </div>
+ <a class="info-back" href="index.html">
+  ‹ Voltar
+ </a>
 
  <!-- TÍTULO -->
  <h1 class="info-title">
@@ -309,81 +346,79 @@ body {
  </h1>
 
  <!-- PRIVACIDADE -->
- <div class="info-hero">
+ <section class="info-privacy">
 
-  <small>🔒 Sua privacidade</small>
+  <span class="info-privacy-label">
+   🔒 Sua privacidade
+  </span>
 
-  <strong>
-   Seus dados financeiros ficam
-   armazenados no seu aparelho.
+  <strong class="info-privacy-title">
+   Seus dados financeiros ficam armazenados no seu celular.
   </strong>
 
-  <small>
-   Contas, salário, desejos e metas
-   são salvos localmente no navegador.
-  </small>
+  <p class="info-privacy-desc">
+   Contas, salário, desejos e metas são
+   salvos localmente no navegador.
+  </p>
 
- </div>
+ </section>
 
  <!-- COMO FUNCIONA -->
- <div class="info-card">
+ <section class="info-card">
 
   <h2>Como funciona</h2>
 
-  <div class="info-item">
-   <span class="info-icon">✓</span>
-   <p>
-    O aplicativo utiliza o
+  <div class="info-line">
+   <span class="info-check">✓</span>
+   <p class="info-line-text">
+    O aplicativo utiliza
     <b>armazenamento local</b>
     para guardar suas informações financeiras.
    </p>
   </div>
 
-  <div class="info-item">
-   <span class="info-icon">✓</span>
-   <p>
+  <div class="info-line">
+   <span class="info-check">✓</span>
+   <p class="info-line-text">
     Suas contas, salário, desejos e metas
     ficam registrados
     <b>no navegador do seu aparelho</b>.
    </p>
   </div>
 
-  <div class="info-item">
-   <span class="info-icon">✓</span>
-   <p>
+  <div class="info-line">
+   <span class="info-check">✓</span>
+   <p class="info-line-text">
     Os registros financeiros são salvos
     localmente, sem necessidade de
     cadastro ou banco de dados.
    </p>
   </div>
 
-  <div class="info-item">
-   <span class="info-icon">▥</span>
-   <p>
+  <div class="info-line">
+   <span class="info-check">▥</span>
+   <p class="info-line-text">
     Utilizamos o
     <b>Google Analytics</b>
-    para obter estatísticas de acesso,
-    como visitas e utilização das páginas.
+    para acompanhar estatísticas de acesso,
+    como visitas às páginas.
     Esse serviço pode coletar dados
     técnicos e identificadores.
    </p>
   </div>
 
- </div>
+ </section>
 
- <!-- CUIDADO COM OS DADOS -->
- <div class="info-card info-warning">
+ <!-- AVISO -->
+ <section class="info-card info-warning">
 
   <h2>
-   ⚠️ Cuidado ao limpar os dados
-   do navegador
+   ⚠️ Cuidado ao limpar os dados do navegador
   </h2>
 
   <p>
-   Se você apagar os dados do site
-   no navegador, poderá
-   <b>perder as informações salvas</b>
-   no aplicativo.
+   Se você apagar os dados do site,
+   poderá <b>perder suas informações financeiras</b>.
   </p>
 
   <p>
@@ -393,18 +428,18 @@ body {
   </p>
 
   <p>
-   Para recuperar suas informações,
+   Para recuperar seus registros,
    utilize a opção <b>Importar</b>.
   </p>
 
- </div>
+ </section>
 
- <!-- CONTATO LUMANOIDS -->
- <div class="info-card info-brand">
+ <!-- CONTATO -->
+ <section class="info-card info-contact">
 
   <h2>
    💚 Desenvolvido por
-   <span class="brand-name">Lumanoids</span>
+   <span class="info-pink">Lumanoids</span>
   </h2>
 
   <p>
@@ -415,7 +450,7 @@ body {
 
   <a
    id="site"
-   class="info-btn site"
+   class="info-button info-site"
    href="#"
    target="_blank"
    rel="noopener noreferrer">
@@ -424,19 +459,19 @@ body {
 
   <a
    id="wpp"
-   class="info-btn whats"
+   class="info-button info-whatsapp"
    href="#"
    target="_blank"
    rel="noopener noreferrer">
    💬 Chamar no WhatsApp
   </a>
 
- </div>
+ </section>
 
  <!-- OUTROS APLICATIVOS -->
- <div class="info-more">
+ <section class="info-more">
 
-  <span class="info-more-title">
+  <span class="info-more-label">
    Conheça também
   </span>
 
@@ -448,22 +483,20 @@ body {
    🛒 Lista de compras
   </a>
 
- </div>
+ </section>
 
  <!-- RODAPÉ -->
- <div class="info-footer">
+ <footer class="info-footer">
   Criado por
-  <span class="brand-name">Lumanoids</span>
- </div>
+  <span class="info-pink">Lumanoids</span>
+ </footer>
 
-</div>
+</main>
 
-<!-- CONFIGURAÇÕES CENTRALIZADAS -->
+<!-- CONFIGURAÇÕES DOS LINKS -->
 <script src="js/core.js"></script>
 
 <script>
- // Links definidos no core.js
-
  const siteBtn = document.getElementById('site');
  const whatsBtn = document.getElementById('wpp');
  const comprasBtn = document.getElementById('lc');
@@ -472,21 +505,21 @@ body {
      && SITE_LUMANOIDS) {
   siteBtn.href = SITE_LUMANOIDS;
  } else {
-  siteBtn.style.display = 'none';
+  siteBtn.hidden = true;
  }
 
  if (typeof WHATS_LUMANOIDS !== 'undefined'
      && WHATS_LUMANOIDS) {
   whatsBtn.href = WHATS_LUMANOIDS;
  } else {
-  whatsBtn.style.display = 'none';
+  whatsBtn.hidden = true;
  }
 
  if (typeof LINK_COMPRAS !== 'undefined'
      && LINK_COMPRAS) {
   comprasBtn.href = LINK_COMPRAS;
  } else {
-  comprasBtn.style.display = 'none';
+  comprasBtn.hidden = true;
  }
 </script>
 
