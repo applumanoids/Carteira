@@ -1,185 +1,127 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><!-- Google tag (gtag.js) -->
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minha saúde financeira</title>
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#16a34a">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Saúde financeira">
+<link rel="stylesheet" href="css/style.css">
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-83Y4RSJ6YT"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-83Y4RSJ6YT');
-</script><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Minha Carteira</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#16a34a"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Minha Carteira">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--g:#16a34a;--gl:#e8f6ed;--o:#f59e0b;--ol:#fef3dc;--r:#dc2626;--rl:#fde8e8;--t:#1f2937;--m:#6b7280;--b:#f3f4f6}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#f9fafb;color:var(--t);font-size:14px}
-.w{position:relative;max-width:520px;margin:auto;padding:12px 8px 24px}
-h1{margin:0;font-size:24px;font-weight:800}.sub{color:var(--m);font-size:12px}
-.hd{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.mn{display:flex;align-items:center;background:var(--b);border-radius:14px;padding:4px}
-.mn button{border:0;background:none;font-size:20px;padding:4px 10px;cursor:pointer}.mn b{font-size:13px;min-width:100px;text-align:center}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0}
-.c{border-radius:12px;padding:8px;height:74px;display:flex;flex-direction:column;justify-content:center}
-.c small{color:var(--m);font-size:11px}.c b{font-size:15px}.c.s{background:var(--gl)}.c.t{background:var(--rl);box-shadow:0 0 0 2px #f9a8a8}.c.d{background:var(--gl)}
-.c button{border:0;background:none;cursor:pointer;float:right}
-.box{background:#fff;border:1px solid #eee;border-radius:14px;padding:10px;margin-bottom:8px}
-.bar{height:10px;background:#e5e7eb;border-radius:9px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;border-radius:9px;transition:.4s}
-.pg{display:flex;gap:8px;align-items:center}.pg>div:first-child{flex:1}.msg{border-radius:10px;padding:8px;font-size:12px;flex:1}
-.deb{background:var(--ol);cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-color:#fde2a0}
-.btns{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:8px}
-.btns button{border:0;border-radius:12px;padding:9px 2px;font:600 11px Inter;background:#e5e7eb;cursor:pointer;min-height:44px}
-.btns .p{background:var(--g);color:#fff}.btns .w2{background:var(--gl);color:#166534}
-.fl{display:flex;gap:5px;margin-bottom:8px}.fl button{flex:1;border:0;border-radius:20px;padding:9px;background:#e5e7eb;font:600 12px Inter;cursor:pointer}.fl .on{background:var(--g);color:#fff}
-.tw{overflow:hidden;background:#fff;border-radius:12px;border:1px solid #eee}
-table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:11px}.n{overflow:hidden;text-overflow:ellipsis}td:nth-child(n+2){text-align:center}th:nth-child(n+2){text-align:center}th{color:var(--m);font-weight:500;text-align:left;padding:6px 2px;font-size:10px;background:#f9fafb}
-td{padding:6px 2px;border-top:1px solid #f0f0f0;white-space:nowrap}.late{color:var(--r);font-weight:700}
-.tag{background:var(--b);border-radius:10px;padding:2px 6px;font-size:11px}
-.ck{width:20px;height:20px;border-radius:50%;border:2px solid #cbd5e1;background:#fff;cursor:pointer;color:#fff;font-size:13px;padding:0}.ck.on{background:var(--g);border-color:var(--g)}
-.ic{border:0;background:none;cursor:pointer;font-size:13px;padding:1px}
-.ms{background:#fff;border-radius:12px;padding:10px;margin-top:8px;font-size:12px;color:#374151;line-height:1.6}
-.pie{width:230px;height:230px;border-radius:50%;margin:12px auto}.lg{display:flex;gap:6px;align-items:center;font-size:12px;margin:5px 0}.lg i{width:12px;height:12px;border-radius:4px}.lg span:first-of-type{flex:1}.lg b{width:36px;text-align:right}.ibt{position:absolute;top:4px;right:6px;width:34px;height:34px;border:0;border-radius:50%;background:#e5e7eb;font-size:16px;cursor:pointer;z-index:2}#md{background:#1f2937;color:#f9fafb;text-align:center}#md input{background:#111827;color:#fff;border-color:#374151;font-size:18px;text-align:center}#md .row button{background:#374151;color:#fff}#md .row .p{background:#16a34a}#md .row .dg{background:#dc2626}.ft .cr{font-size:14px;color:#9ca3af;margin-bottom:4px}.cr b{color:#ec4899;font-weight:700;font-size:15px}.ft{text-align:center;color:#9ca3af;font-size:11px;margin-top:14px}.ft a{color:inherit;cursor:pointer;text-decoration:underline}
-dialog{border:0;border-radius:16px;width:min(94vw,480px);padding:16px;max-height:90vh}dialog::backdrop{background:#0006}
-label{display:block;font-size:12px;font-weight:600;margin:8px 0 3px}input,select{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:10px;font:14px Inter}
-.row{display:flex;gap:8px;margin-top:12px}.row button{flex:1;padding:11px;border:0;border-radius:10px;font:600 14px Inter;cursor:pointer;background:#e5e7eb}.row .p{background:var(--g);color:#fff}
-.bc{display:flex;align-items:center;gap:6px;font-size:11px;margin:3px 0}.bc i{display:block;height:14px;background:var(--g);border-radius:4px}
-</style></head><body><div class="w"><button id="pwa" class="ibt" onclick="pwa()" title="Adicionar à tela inicial">📲</button>
-<div class="hd"><div><h1>👛 Minha Carteira</h1><div class="sub">Seu dinheiro, mais organização para o seu dia.</div></div>
-<div class="mn"><button onclick="nav(-1)">‹</button><b id="mlab"></b><button onclick="nav(1)">›</button></div></div>
-<div class="cards">
-<div class="c s"><small>💵 Salário <button onclick="editSal()">✏️</button></small><b id="sal"></b></div>
-<div class="c t"><small>💸 Total de contas</small><b id="tot" style="color:var(--r)"></b></div>
-<div class="c d"><small>💚 Saldo disponível</small><b id="sld"></b></div></div>
-<div class="box pg"><div><b id="pct" style="font-size:22px"></b> <small class="sub">do seu salário comprometido</small><div class="bar"><i id="bi"></i></div></div><div id="face"></div><div class="msg" id="pm"></div></div>
-<div id="debt"></div>
-<div class="btns"><button class="p" onclick="openForm()">➕ Adicionar conta</button><button onclick="report()">📊 Relatório anual</button><button class="w2" onclick="png(true)">🟢 Enviar WhatsApp</button></div>
-<div class="tw"><table><colgroup><col><col style="width:26px"><col style="width:38px"><col style="width:56px"><col style="width:30px"><col style="width:28px"><col style="width:46px"></colgroup><thead><tr><th>Conta</th><th>Cat.</th><th>Venc.</th><th>Valor</th><th>Parc.</th><th>Pago</th><th>Ações</th></tr></thead><tbody id="tb"></tbody></table></div>
-<div class="ms" id="msgs"></div>
-<div class="box" style="margin-top:8px"><h3 style="margin:0">Onde estou gastando meu dinheiro?</h3><div id="pie" class="pie"></div><p id="pm2" style="font-weight:600;font-size:13px"></p><div id="leg"></div></div>
-<div class="ft"><div class="cr">Criado por <b>Lumanoids</b></div><a onclick="$('#bk').showModal()">backup</a></div></div>
+</script>
+</head><body><div class="w">
 
+<div class="top">
+ <div><h1><span id="ttl">Minha saúde financeira</span> <span class="yr" id="yr"></span></h1><div class="sub" style="margin-top:6px">Seu dinheiro, mais organização para o seu dia.</div></div>
+ <div class="tbn"><button class="ibt" onclick="openCfg()" title="Configurações" data-i="gear"></button><a class="ibt" href="informacoes.html" title="Informações" data-i="info"></a></div>
+</div>
+
+<div class="tabs">
+ <button id="t-cart" class="on" onclick="tab('cart')" data-i="wallet">Carteira</button>
+ <button id="t-wish" onclick="tab('wish')" data-i="heart">Lista de desejos</button>
+ <button id="t-goal" onclick="tab('goal')" data-i="target">Metas do ano</button>
+</div>
+
+<!-- ===== CARTEIRA ===== -->
+<section id="v-cart"><div class="cg">
+ <div class="mbar g-month"><button onclick="nav(-1)" data-i="left"></button><b><span data-i="calendar"></span><span id="mlab"></span></b><button onclick="nav(1)" data-i="right"></button></div>
+
+ <div class="cards g-cards">
+  <div class="c"><span class="tile" data-i="wallet"></span><button class="ab" onclick="editSal()" title="Editar salário" data-i="pencil"></button><small>Salário</small><b id="sal"></b></div>
+  <div class="c t"><span class="tile" data-i="file"></span><small>Total de contas</small><b id="tot" style="color:var(--r)"></b></div>
+  <div class="c"><span class="tile" data-i="coins"></span><button class="ab" id="eyeb" onclick="setEye(!S.cfg.showSal)" title="Mostrar ou esconder"></button><small>Saldo disponível</small><b id="sld"></b></div>
+ </div>
+
+ <div class="box prog g-prog"><svg class="ring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#e8ecf0" stroke-width="11"/><circle id="rg" cx="50" cy="50" r="40" fill="none" stroke="#16a34a" stroke-width="11" stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="251.3" transform="rotate(-90 50 50)" style="transition:.5s"/><text id="pct" x="50" y="58" text-anchor="middle"></text></svg>
+  <div style="flex:1"><div class="sub">Do seu salário</div><b style="font-size:16px">já está comprometido</b><div class="bar"><i id="bi"></i></div></div></div>
+
+ <div class="mcard g-msg" id="pmc"><div id="face"></div><div><b id="pmt"></b><div id="pm"></div></div></div>
+ <div id="debt" class="g-debt"></div>
+
+ <button class="addbtn g-add" onclick="openForm()" data-i="plus">Adicionar conta</button>
+ <div class="btn2 g-btns"><button onclick="openReport()" data-i="bars">Relatório anual</button><button onclick="png(true)" data-i="whats">Enviar WhatsApp</button></div>
+
+ <div class="box g-accts"><div class="ach"><h3>Minhas contas</h3><a id="vall" onclick="toggleAll()"></a></div>
+  <div id="alist"></div><div class="sub" id="sortinfo"></div></div>
+
+ <div class="box g-chart"><h3 style="margin:0;font-size:19px">Onde estou gastando meu dinheiro?</h3>
+  <div class="seg"><button id="pcat" onclick="setPie('cat')" data-i="pie">Por categoria</button><button id="pacc" onclick="setPie('acc')" data-i="bars">Por conta</button></div>
+  <div class="pc"><div id="pie" class="pie"></div><div id="leg"></div></div>
+  <p id="pm2" style="font-weight:600;font-size:13px;margin:10px 0 0"></p></div>
+
+ <div class="tip g-tips"><span class="bulb" data-i="bulb"></span><div><b>Lembre-se</b><ul id="msgs"></ul></div></div>
+</div></section>
+
+<!-- ===== LISTA DE DESEJOS ===== -->
+<section id="v-wish" hidden><div class="narrow">
+ <div class="hero"><small>Para realizar tudo da lista, você precisa de</small><b id="wtot"></b><small id="wsub"></small></div>
+ <button class="bigbtn" onclick="openWish()" data-i="plus">Adicionar desejo</button>
+ <div id="wlist"></div>
+</div></section>
+
+<!-- ===== METAS DO ANO ===== -->
+<section id="v-goal" hidden><div class="narrow">
+ <div class="box" style="margin-bottom:10px">
+  <div class="line"><h2 id="gtt" style="margin:0;font-size:18px"></h2><div class="mn" style="box-shadow:none"><button onclick="gnav(-1)" data-i="left"></button><b id="gyl" style="min-width:50px"></b><button onclick="gnav(1)" data-i="right"></button></div></div>
+  <div class="sub" id="gsub" style="margin-top:6px"></div><div class="bar"><i id="gbar" style="width:0;background:var(--g)"></i></div>
+ </div>
+ <button class="bigbtn" onclick="openGoal()" data-i="plus">Nova meta</button>
+ <div id="glist"></div>
+</div></section>
+
+<div class="more" style="max-width:520px;margin:18px auto 0">Conheça também<a id="lc" href="#" target="_blank" rel="noopener">🛒 Lista de compras</a></div>
+<div class="ft"><div class="cr">Criado por <b>Lumanoids</b></div></div>
+</div>
+
+<!-- ===== NOVA / EDITAR CONTA ===== -->
 <dialog id="fm"><form method="dialog" onsubmit="return false"><h3 id="ft" style="margin:0">Nova conta</h3>
 <label>Nome</label><input id="fn"><label>Valor (R$)</label><input id="fv" type="number" step="0.01" inputmode="decimal">
 <label>Categoria</label><select id="fc"></select><button type="button" class="ic" onclick="newCat()">+ categoria</button>
 <label>Vencimento</label><input id="fd" type="date"><label>Tipo</label>
-<select id="fy" onchange="$('#fi').style.display=this.value=='inst'?'block':'none'"><option value="single">Conta única</option><option value="fixed">Conta fixa/recorrente</option><option value="inst">Conta parcelada</option></select>
-<div id="fi" style="display:none"><label>Total de parcelas</label><input id="ft2" type="number" min="2"><label>Número da primeira parcela</label><input id="f1" type="number" min="1" value="1"><small class="sub">O valor acima é o de cada parcela; o vencimento é o da primeira.</small></div>
+<select id="fy" onchange="updFi()"><option value="single">Conta única</option><option value="fixed">Conta fixa/recorrente</option><option value="inst">Conta parcelada</option></select>
+<div id="ftn" class="sub" style="display:none;margin-top:6px;color:#b45309">⚠️ Ao mudar o tipo, as contas futuras desta conta serão refeitas.</div>
+<div id="fi" style="display:none"><label>Total de parcelas</label><input id="ft2" type="number" min="2"><label id="f1l">Número da primeira parcela</label><input id="f1" type="number" min="1" value="1"><small class="sub" id="fhint"></small></div>
 <div class="row"><button type="button" onclick="$('#fm').close()">Cancelar</button><button type="button" class="p" onclick="saveForm()">Salvar conta</button></div></form></dialog>
+
+<!-- ===== CONFIGURAÇÕES ===== -->
+<dialog id="cf"><h3 style="margin:0">⚙️ Configurações</h3>
+ <div class="cs"><div class="line"><div><h4>💵 Meu salário</h4><b id="cfsal"></b></div><button class="sm" onclick="editSal()">✏️ Alterar</button></div></div>
+ <div class="cs"><div class="line"><div><h4>👁️ Mostrar salário e saldo</h4><p>Na tela principal. Desligado, os valores ficam escondidos.</p></div><label class="sw"><input type="checkbox" id="cfeye" onchange="setEye(this.checked)"><span></span></label></div></div>
+ <div class="cs"><h4>📅 Dia fixo de vencimento</h4><p>Geralmente o dia em que você recebe o salário. Toda conta nova já vem com esse dia, e você pode mudar na hora.</p>
+  <select id="cfpay" onchange="setPay(this.value)" style="margin-top:8px"></select></div>
+ <div class="cs"><h4>↕️ Ordenar a tabela por</h4><div class="opts" id="cfsort"></div></div>
+ <div class="cs"><h4>💾 Cópia de segurança (JSON)</h4><p>Salve uma cópia dos seus dados ou traga de volta uma cópia salva.</p>
+  <div class="row" style="margin-top:8px"><button class="p" onclick="exp()">⬇️ Exportar</button><button onclick="$('#imp').click()">⬆️ Importar</button></div>
+  <input id="imp" type="file" accept=".json,application/json" hidden onchange="imp(this)"></div>
+ <div class="cs"><button class="info" onclick="explain()">🔒 Meus dados estão seguros? Como funciona?</button></div>
+ <div class="cs"><button class="dgb" onclick="wipeAll()">🗑️ Limpar tudo</button></div>
+ <div class="row"><button onclick="$('#cf').close()">Fechar</button></div>
+</dialog>
+
+<!-- ===== DESEJO ===== -->
+<dialog id="wd"><h3 id="wt" style="margin:0">Novo desejo</h3>
+ <label>Nome do item</label><input id="wn" placeholder="Ex.: Sofá novo">
+ <label>Valor (R$)</label><input id="wv" type="number" step="0.01" inputmode="decimal">
+ <label>Categoria</label><select id="wc"></select>
+ <div class="row"><button onclick="$('#wd').close()">Cancelar</button><button class="p" onclick="saveWish()">Salvar</button></div>
+</dialog>
+
+<!-- ===== META ===== -->
+<dialog id="gl"><h3 id="gt" style="margin:0">Nova meta</h3>
+ <label>Qual é a sua meta?</label><input id="gn" placeholder="Ex.: Quitar o cartão de crédito">
+ <label>Grau de dificuldade</label><div class="pills" id="gp"></div>
+ <div class="row"><button onclick="$('#gl').close()">Cancelar</button><button class="p" onclick="saveGoal()">Salvar</button></div>
+</dialog>
+
 <dialog id="gd"><div id="gb"></div><div class="row"><button onclick="$('#gd').close()">Fechar</button></div></dialog>
-<dialog id="bk"><h3 style="margin:0">Backup (JSON)</h3><p class="sub">Os dados ficam salvos no navegador deste endereço. Em outro link ou aparelho, exporte aqui e importe lá.</p><div class="row"><button class="p" onclick="exp()">Exportar</button><button onclick="$('#imp').click()">Importar</button></div><input id="imp" type="file" accept=".json" hidden onchange="imp(this)"><div class="row"><button onclick="$('#bk').close()">Fechar</button></div></dialog>
-
 <dialog id="md"><h3 id="mt" style="margin:0 0 6px"></h3><p id="mm" style="margin:0 0 8px"></p><input id="mi" style="display:none" autocomplete="off"><div class="row"><button id="mc">Cancelar</button><button id="mo" class="p">OK</button></div></dialog>
-<script>
-const $=s=>document.querySelector(s);
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const R=v=>'R$ '+v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
-const MES=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-const CATS=['🏠 Moradia','💡 Água, luz e gás','🛒 Alimentação','🚗 Transporte','💳 Cartão de crédito','📱 Internet e telefone','🏥 Saúde','📚 Educação','🎮 Lazer','💰 Dívidas e empréstimos','🐾 Pets','📦 Outros'];
-let S;try{S=JSON.parse(localStorage.getItem('mc'))}catch(e){}
-S=S||{sal:{},bills:[],cats:[],ended:{}};
-const save=()=>localStorage.setItem('mc',JSON.stringify(S));
-const pad=n=>String(n).padStart(2,'0');
-const now=new Date();let cur=now.getFullYear()+'-'+pad(now.getMonth()+1);
-const today=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
-const addM=(m,k)=>{let[y,n]=m.split('-').map(Number);let d=new Date(y,n-1+k,1);return d.getFullYear()+'-'+pad(d.getMonth()+1)};
-const mk=(m,day)=>{let[y,n]=m.split('-').map(Number);return m+'-'+pad(Math.min(day,new Date(y,n,0).getDate()))};
-const mo=b=>b.due.slice(0,7),late=b=>!b.paid&&b.due<today;
-const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
-function dlg(o){return new Promise(r=>{let d=$('#md'),i=$('#mi'),ok=$('#mo'),hi=o.inp!=null;$('#mt').textContent=o.t;$('#mm').textContent=o.m||'';i.style.display=hi?'block':'none';if(hi)i.value=o.inp;
- $('#mc').style.display=o.one?'none':'';$('#mc').textContent=o.cn||'Cancelar';ok.textContent=o.ok||'OK';ok.className='p'+(o.danger?' dg':'');
- const end=v=>{d.close();r(v)};$('#mc').onclick=()=>end(null);ok.onclick=()=>end(hi?i.value:true);d.oncancel=e=>{e.preventDefault();end(null)};d.showModal();if(hi)setTimeout(()=>i.focus(),60)})}
-let filt='all',editing=null;
-function ensureFixed(m){let last={};S.bills.filter(b=>b.type=='fixed').forEach(b=>{if(!last[b.gid]||mo(b)>mo(last[b.gid]))last[b.gid]=b});
- for(const g in last){let b=last[g],x=mo(b),lim=addM(now.getFullYear()+'-'+pad(now.getMonth()+1),24);
-  while(x<m&&x<lim){x=addM(x,1);if(S.ended[g]&&x>S.ended[g])break;S.bills.push({...b,id:uid(),due:mk(x,b.day),paid:false,paidAt:null})}}save()}
-const sal=m=>{let k=Object.keys(S.sal).filter(x=>x<=m).sort().pop();return k?S.sal[k]:0};
-function calc(){ensureFixed(cur);let all=S.bills,gm=m=>all.filter(b=>mo(b)==m),sm=a=>a.reduce((s,b)=>s+b.value,0);
- let ks=[...all.map(mo),...Object.keys(S.sal)].filter(k=>k<cur).sort(),cs=0;
- if(ks.length){let k=ks[0];while(k<cur){let bal=sal(k)+cs-sm(gm(k));if(bal>=0)cs=bal;else cs=-Math.min(-bal,sm(all.filter(x=>mo(x)<=k&&!x.paid)));k=addM(k,1)}}
- return{mb:gm(cur),pv:all.filter(b=>mo(b)<cur&&!b.paid),cs,sum:sm}}
-function face(p){let k=p>90?2:p>70?1:0,c=['#16a34a','#f97316','#dc2626'][k];
- let eyes=k==0?'<path d="M28 46q8-9 16 0M56 46q8-9 16 0" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>':'<circle cx="36" cy="48" r="6" fill="#fff"/><circle cx="64" cy="48" r="6" fill="#fff"/><circle cx="36" cy="50" r="3" fill="#222"/><circle cx="64" cy="50" r="3" fill="#222"/>';
- let ex=['','<path d="M27 38l14-6M73 38l-14-6" stroke="#7c2d12" stroke-width="3.5" stroke-linecap="round"/><path d="M84 24q6 8 0 12q-6-4 0-12z" fill="#38bdf8"/>','<path d="M27 34l16 8M73 34l-16 8" stroke="#450a0a" stroke-width="5" stroke-linecap="round"/>'][k];
- let m=['M30 62Q50 84 70 62Z','M34 72q8-6 16 0t16 0','M32 76Q50 58 68 76'][k];
- return `<svg width="72" height="72" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="${c}"/>${eyes}${ex}<path d="${m}" fill="${k==0?'#fff':'none'}" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>${p>100?'<path d="M16 14l6 10M84 14l-6 10M50 2v12" stroke="#fff" stroke-width="3" stroke-linecap="round"/>':''}</svg>`}
-function render(){const{mb,pv,cs,sum}=calc();let s=sal(cur),cr=Math.max(0,cs),ex=Math.max(0,-cs),tot=sum(mb)+ex,base=s+cr,sld=base-tot,p=base?Math.round(tot/base*100):(tot?101:0);
- $('#mlab').textContent=MES[+cur.slice(5)-1]+' '+cur.slice(0,4);$('#sal').textContent=R(s);$('#tot').textContent=R(tot);$('#sld').textContent=R(sld);$('#sld').style.color=sld<0?'var(--r)':'var(--g)';
- let col=p>90?'#dc2626':p>70?'#f97316':'#16a34a';$('#pct').textContent=p+'%';$('#pct').style.color=col;$('#bi').style.cssText=`width:${Math.min(p,100)}%;background:${col}`;
- $('#face').innerHTML=face(p);let pm=$('#pm');pm.style.background=col+'22';pm.textContent=p>100?`ALERTA! Você ultrapassou o limite em ${R(tot-base)}. Revise seus gastos!`:p>90?'Muito cuidado! Seu salário está praticamente todo comprometido!':p>70?'Cuidado! Seu salário está acabando. Fique atento aos próximos gastos!':'Muito bem! Você ainda tem uma boa parte do salário disponível!';
- $('#debt').innerHTML=(cr?`<div class="sub" style="margin:-2px 4px 6px">💚 Saldo do mês anterior: <b>${R(cr)}</b> (já somado ao disponível)</div>`:'')+(pv.length?`<div class="box deb" onclick="showDebts()"><div><b>⚠️ Dívida do mês passado</b><div class="sub">Você possui ${pv.length} conta${pv.length>1?'s':''} pendente${pv.length>1?'s':''} de meses anteriores.</div></div><b style="color:var(--r)">${R(sum(pv))} ›</b></div>`:'');
- let rows=mb.slice().sort((a,b)=>a.due.localeCompare(b.due));
- $('#tb').innerHTML=rows.map(b=>row(b)).join('')||'<tr><td colspan=7 style="text-align:center;color:#9ca3af">Nenhuma conta neste mês</td></tr>';
- let m=[],pend=sum(mb.filter(b=>!b.paid))+sum(pv),lc=mb.filter(late).length+pv.length,pt=sum(S.bills.filter(b=>mo(b)==addM(cur,-1)));
- if(base)m.push(`Você já comprometeu ${p}% do seu salário.`);if(pend)m.push(`Você possui ${R(pend)} em contas pendentes.`);else if(mb.length)m.push('Parabéns! Todas as suas contas deste mês foram pagas!');
- if(lc)m.push(`Você possui ${lc} conta${lc>1?'s':''} vencida${lc>1?'s':''}.`);
- if(pt&&sum(mb)!=pt){let d=Math.round((sum(mb)/pt-1)*100);m.push(`Seu gasto ${d>0?'aumentou':'diminuiu'} ${Math.abs(d)}% em relação ao mês anterior.`)}
- $('#msgs').innerHTML=m.map(x=>'• '+esc(x)).join('<br>')||'Cadastre suas contas para começar.';
- let g={};mb.forEach(b=>g[b.cat]=(g[b.cat]||0)+b.value);let en=Object.entries(g).sort((a,b)=>b[1]-a[1]),T=sum(mb),PAL=['#16a34a','#f59e0b','#3b82f6','#ec4899','#8b5cf6','#14b8a6','#ef4444','#84cc16','#f97316','#06b6d4','#a855f7','#64748b','#eab308'],ac=0;
- let st=en.map(([c,v],i)=>{let a=ac/T*100;ac+=v;return PAL[i%13]+' '+a+'% '+ac/T*100+'%'});
- $('#pie').style.background=T?'conic-gradient('+st.join(',')+')':'#e5e7eb';
- $('#leg').innerHTML=en.map(([c,v],i)=>`<div class="lg"><i style="background:${PAL[i%13]}"></i><span style="${i?'':'font-weight:700'}">${esc(c)}${i?'':' ⭐'}</span><b>${Math.round(v/T*100)}%</b><span>${R(v)}</span></div>`).join('')||'<small class="sub">Sem contas neste mês.</small>';
- $('#pm2').textContent=en.length?`Sua maior despesa neste mês é ${en[0][0].split(' ').slice(1).join(' ')}, representando ${Math.round(en[0][1]/T*100)}% das suas contas.`:''}
-function row(b){return`<tr><td class="n">${esc(b.name)}</td><td title="${esc(b.cat)}" style="font-size:14px">${b.cat.split(' ')[0]}</td><td class="${late(b)?'late':''}">${b.due.slice(8)}/${b.due.slice(5,7)}</td><td>${b.value.toLocaleString('pt-BR',{minimumFractionDigits:2})}</td><td>${b.type=='inst'?b.n+'/'+b.total:'–'}</td><td><button class="ck ${b.paid?'on':''}" onclick="tog('${b.id}')">${b.paid?'✓':''}</button></td><td><button class="ic" onclick="openForm('${b.id}')">✏️</button><button class="ic" onclick="del('${b.id}')">🗑️</button></td></tr>`}
-function tog(id){let b=S.bills.find(x=>x.id==id);b.paid=!b.paid;b.paidAt=b.paid?today:null;save();render();if($('#gd').open)showDebts()}
-function nav(k){cur=addM(cur,k);render()}
-async function editSal(){let v=await dlg({t:'💵 Editar salário',m:'Salário mensal de '+MES[+cur.slice(5)-1]+' (vale para os meses seguintes até alterar):',inp:String(sal(cur)).replace('.',','),ok:'Salvar'});if(v===null)return;
- let s=String(v).trim().replace('R$','').trim();if(s.includes(','))s=s.replace(/\./g,'').replace(',','.');v=parseFloat(s);
- if(isNaN(v)||v<0)return dlg({t:'⚠️ Atenção',m:'Valor inválido.',one:1});S.sal[cur]=v;save();render()}
-function cats(){return CATS.concat(S.cats)}
-async function newCat(){let n=await dlg({t:'🏷️ Nova categoria',m:'Nome da categoria:',inp:'',ok:'Criar'});if(n&&n.trim()){S.cats.push('⭐ '+n.trim());save();fillCats('⭐ '+n.trim())}}
-function fillCats(sel){$('#fc').innerHTML=cats().map(c=>`<option ${c==sel?'selected':''}>${esc(c)}</option>`).join('')}
-function openForm(id){editing=id?S.bills.find(b=>b.id==id):null;let b=editing;$('#ft').textContent=b?'Editar conta':'Nova conta';
- $('#fn').value=b?b.name:'';$('#fv').value=b?b.value:'';fillCats(b?b.cat:CATS[0]);$('#fd').value=b?b.due:today;$('#fy').value=b?b.type:'single';$('#fy').disabled=!!b;$('#fi').style.display=!b&&0?'block':'none';$('#fi').style.display='none';$('#ft2').value='';$('#f1').value=1;$('#fm').showModal()}
-async function saveForm(){let name=$('#fn').value.trim(),v=parseFloat($('#fv').value),d=$('#fd').value,cat=$('#fc').value,ty=$('#fy').value;
- if(!name||!(v>0)||!d)return dlg({t:'⚠️ Atenção',m:'Preencha nome, valor e vencimento.',one:1});
- if(editing){let b=editing,fut=false;if(b.gid&&S.bills.some(x=>x.gid==b.gid&&x.due>b.due))fut=!!await dlg({t:'✏️ Editar conta',m:'Aplicar a alteração também às ocorrências futuras?',ok:'Esta e futuras',cn:'Só esta'});
-  let upd=x=>{x.name=name;x.value=v;x.cat=cat};upd(b);b.due=d;b.day=+d.slice(8);if(fut)S.bills.filter(x=>x.gid==b.gid&&x.due>b.due).forEach(upd)}
- else if(ty=='inst'){let t=+$('#ft2').value,f=+$('#f1').value||1;if(!(t>=2)||f>t)return dlg({t:'⚠️ Atenção',m:'Informe o total de parcelas e a primeira parcela.',one:1});let g=uid(),day=+d.slice(8);
-  for(let i=f;i<=t;i++)S.bills.push({id:uid(),gid:g,name,value:v,cat,due:mk(addM(d.slice(0,7),i-f),day),paid:false,type:'inst',n:i,total:t,day})}
- else{let g=uid();S.bills.push({id:uid(),gid:g,name,value:v,cat,due:d,paid:false,type:ty,day:+d.slice(8)})}
- save();$('#fm').close();render()}
-async function del(id){let b=S.bills.find(x=>x.id==id),fut=S.bills.filter(x=>x.gid==b.gid&&x.due>b.due&&b.type!='single');
- if(!await dlg({t:'🗑️ Excluir conta',m:'Deseja realmente excluir a conta "'+b.name+'"?',ok:'Excluir',danger:1}))return;let all=false;if(fut.length)all=!!await dlg({t:'🗑️ Ocorrências futuras',m:'Excluir também as '+fut.length+' ocorrências futuras de "'+b.name+'"?',ok:'Esta e futuras',cn:'Só esta',danger:1});
- S.bills=S.bills.filter(x=>x.id!=id&&!(all&&x.gid==b.gid&&x.due>b.due));if(b.type=='fixed'&&all)S.ended[b.gid]=addM(mo(b),-1);save();render()}
-function showDebts(){const{pv,sum}=calc();$('#gb').innerHTML=`<h3 style="margin:0">⚠️ Pendências anteriores</h3><p class="sub">Vencimento original preservado. Total: <b style="color:var(--r)">${R(sum(pv))}</b></p>`+
- (pv.length?pv.sort((a,b)=>a.due.localeCompare(b.due)).map(b=>`<div class="bc" style="font-size:13px;justify-content:space-between"><span>${esc(b.name)}${b.type=='inst'?' '+b.n+'/'+b.total:''} · venc. ${b.due.split('-').reverse().join('/')}</span><span>${R(b.value)} <button class="ck" onclick="tog('${b.id}')"></button></span></div>`).join(''):'<p>Nenhuma pendência. 🎉</p>');
- if(!$('#gd').open)$('#gd').showModal()}
-function report(){let y=+cur.slice(0,4);rep(y);if(!$('#gd').open)$('#gd').showModal()}
-function rep(y){let M=[...Array(12)].map((_,i)=>{ensureFixed(y+'-'+pad(i+1));let a=S.bills.filter(b=>mo(b)==y+'-'+pad(i+1));return{t:a.reduce((s,b)=>s+b.value,0),p:a.filter(b=>b.paid).reduce((s,b)=>s+b.value,0),n:a.length}});
- let T=M.reduce((s,m)=>s+m.t,0),act=M.filter(m=>m.n),mx=Math.max(...M.map(m=>m.t),1),hi=act.length?Math.max(...act.map(m=>m.t)):0,lo=act.length?Math.min(...act.map(m=>m.t)):0;
- let pend=S.bills.filter(b=>mo(b)<cur&&!b.paid).reduce((s,b)=>s+b.value,0);
- $('#gb').innerHTML=`<div class="hd"><h3 style="margin:0">📊 Relatório ${y}</h3><div class="mn"><button onclick="rep(${y-1})">‹</button><b>${y}</b><button onclick="rep(${y+1})">›</button></div></div>
- <p class="sub">Total no ano: <b>${R(T)}</b> · Média mensal: <b>${R(act.length?T/act.length:0)}</b><br>Maior: <b>${hi?MES[M.findIndex(m=>m.t==hi&&m.n)]+' '+R(hi):'—'}</b> · Menor: <b>${lo?MES[M.findIndex(m=>m.t==lo&&m.n)]+' '+R(lo):'—'}</b><br>Contas contabilizadas no vencimento original. Pendências acumuladas (não somadas): <b style="color:var(--r)">${R(pend)}</b></p>`+
- M.map((m,i)=>`<div class="bc"><span style="width:28px">${MES[i].slice(0,3)}</span><i style="width:${m.t/mx*60}%;${m.t==hi&&hi?'background:var(--r)':''}"></i>${R(m.t)}</div>`).join('')+
- `<div class="tw" style="margin-top:8px"><table style="min-width:0"><tr><th>Mês</th><th>Total</th><th>Pago</th><th>Pend.</th><th>Qtd</th></tr>${M.map((m,i)=>`<tr><td>${MES[i].slice(0,3)}</td><td>${R(m.t)}</td><td>${R(m.p)}</td><td>${R(m.t-m.p)}</td><td>${m.n}</td></tr>`).join('')}</table></div>`}
-function png(share){const{mb,pv,sum}=calc();let rows=mb.slice().sort((a,b)=>a.due.localeCompare(b.due)),H=230+(rows.length+(pv.length?pv.length+3:0))*34+120,W=720;
- let c=document.createElement('canvas');c.width=W;c.height=H;let x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,W,H);
- x.fillStyle='#16a34a';x.fillRect(0,0,W,12);x.fillStyle='#111';x.font='800 34px Inter,sans-serif';x.fillText('MINHA CARTEIRA',30,66);
- x.font='500 20px Inter,sans-serif';x.fillStyle='#555';x.fillText('Extrato de contas — '+MES[+cur.slice(5)-1]+'/'+cur.slice(0,4),30,98);
- let y=140;const hd=()=>{x.fillStyle='#f3f4f6';x.fillRect(20,y-24,W-40,34);x.fillStyle='#555';x.font='600 14px Inter,sans-serif';[['Conta',30],['Categoria',250],['Venc.',430],['Valor',500],['Parc.',600],['Situação',650]].forEach(([t,px])=>x.fillText(t,px,y));y+=34};
- const line=b=>{x.font='500 14px Inter,sans-serif';x.fillStyle=late(b)?'#dc2626':'#222';x.fillText(b.name.slice(0,24),30,y);x.fillText(b.cat.slice(0,22),250,y);x.fillText(b.due.slice(8)+'/'+b.due.slice(5,7)+'/'+b.due.slice(2,4),430,y);x.fillText(R(b.value),500,y);x.fillText(b.type=='inst'?b.n+'/'+b.total:'—',600,y);x.fillStyle=b.paid?'#16a34a':'#d97706';x.font='700 14px Inter,sans-serif';x.fillText(b.paid?'Paga':'Pendente',650,y);y+=34};
- hd();rows.forEach(line);y+=20;
- const tot=(l,v,col)=>{x.font='700 18px Inter,sans-serif';x.fillStyle=col;x.fillText(l,30,y);x.textAlign='right';x.fillText(R(v),W-30,y);x.textAlign='left';y+=30};
- tot('Total de contas do mês',sum(rows),'#111');tot('Total pago',sum(rows.filter(b=>b.paid)),'#16a34a');tot('Total pendente',sum(rows.filter(b=>!b.paid)),'#d97706');
- if(pv.length){y+=24;x.font='800 20px Inter,sans-serif';x.fillStyle='#dc2626';x.fillText('Pendências anteriores',30,y);y+=40;hd();pv.forEach(line);y+=10;tot('Total de pendências anteriores',sum(pv),'#dc2626')}
- x.font='500 13px Inter,sans-serif';x.fillStyle='#9ca3af';x.textAlign='center';x.fillText('Criado por Lumanoids',W/2,H-24);
- c.toBlob(async bl=>{let f=new File([bl],'extrato-'+cur+'.png',{type:'image/png'});
-  if(share&&navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f],title:'Extrato Minha Carteira'});return}catch(e){if(e.name=='AbortError')return}}
-  let a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download=f.name;a.click();if(share)dlg({t:'📥 Extrato baixado',m:'Seu navegador não compartilha imagens direto. O PNG foi baixado: anexe-o manualmente no WhatsApp.',one:1,ok:'Entendi'})})}
-function exp(){let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(S)],{type:'application/json'}));a.download='minha-carteira-backup.json';a.click()}
-function imp(i){let f=i.files[0];if(!f)return;f.text().then(async t=>{let d;try{d=JSON.parse(t);if(!Array.isArray(d.bills))throw 0}catch(e){return dlg({t:'⚠️ Arquivo inválido',m:'Não foi possível ler este backup.',one:1})}
- if(!await dlg({t:'📤 Restaurar backup',m:'Substituir os dados atuais pelo backup?',ok:'Restaurar',danger:1}))return;S={sal:{},cats:[],ended:{},...d};save();render();$('#bk').close()});i.value=''}
-let dp=null;const stand=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone;
-addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e});addEventListener('appinstalled',()=>{$('#pwa').style.display='none'});
-if(stand())$('#pwa').style.display='none';
-if('serviceWorker' in navigator&&/^https?:/.test(location.protocol))navigator.serviceWorker.register('sw.js').catch(()=>{});
-try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
-async function pwa(){let ios=/iphone|ipad|ipod/i.test(navigator.userAgent),web=/^https?:/.test(location.protocol);
- if(!await dlg({t:'📲 Adicionar à tela inicial',m:'Tenha o Minha Carteira sempre à mão! Adicione um atalho à tela inicial do seu celular.',ok:'Adicionar à tela inicial'}))return;
- if(dp){dp.prompt();let r=await dp.userChoice;dp=null;return dlg({t:'📲 Instalação',m:r.outcome=='accepted'?'O navegador aceitou a instalação. Procure o ícone na tela inicial.':'Instalação cancelada. Você pode tentar de novo quando quiser.',one:1,ok:'Entendi'})}
- let m=ios?'No Safari: toque em Compartilhar (□↑) e depois em "Adicionar à Tela de Início".':'No navegador: abra o menu (⋮) e toque em "Adicionar à tela inicial" ou "Instalar app".';
- if(!web)m+=' Atenção: você abriu o arquivo direto do aparelho ou do WhatsApp. Para instalar de verdade, abra o app pelo endereço https onde ele estiver hospedado. Os dados daqui não passam sozinhos para lá: exporte um backup e restaure.';
- dlg({t:'📲 Como adicionar',m:m,one:1,ok:'Entendi'})}
 
-render();
-</script></body></html>
+<script src="js/core.js"></script>
+<script src="js/app.js"></script>
+</body></html>

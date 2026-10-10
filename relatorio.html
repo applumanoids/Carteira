@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Relatório anual</title>
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#16a34a">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="css/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-83Y4RSJ6YT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-83Y4RSJ6YT');
+</script>
+</head><body><div class="w med">
+ <div class="top"><a class="back" href="index.html">‹ Voltar</a><div class="mn"><button onclick="go(-1)">‹</button><b id="ylab"></b><button onclick="go(1)">›</button></div></div>
+ <h1 style="margin-top:14px">📊 Relatório anual</h1>
+ <div class="sub">Quanto você gastou em contas ao longo do ano.</div>
+
+ <div class="rc" id="kpis"></div>
+
+ <div class="box"><h2>Gasto mês a mês</h2>
+  <div id="chart"></div>
+  <div class="leg2"><i style="background:var(--g)"></i>mês <i style="background:var(--r);margin-left:8px"></i>mês mais caro <i style="background:var(--g);opacity:.45;margin-left:8px"></i>mês que ainda vem <span style="color:#b45309;margin-left:8px">- - -</span> média</div>
+ </div>
+
+ <div class="box"><h2>Onde você mais gastou no ano</h2><div id="cats"></div></div>
+
+ <div class="box"><h2>Resumo por mês</h2>
+  <div class="tw" style="box-shadow:none"><table><thead><tr><th style="text-align:left;padding-left:6px">Mês</th><th>Total</th><th>Pago</th><th>Pendente</th><th>Qtd</th></tr></thead><tbody id="tbm"></tbody></table></div>
+ </div>
+ <div id="pendbox"></div>
+
+ <div class="ft"><div class="cr">Criado por <b>Lumanoids</b></div></div>
+</div>
+<script src="js/core.js"></script>
+<script src="js/relatorio.js"></script>
+</body></html>
