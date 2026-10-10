@@ -1,55 +1,494 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Informações</title>
-<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#16a34a">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#16a34a">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="css/style.css">
-<!-- Google tag (gtag.js) -->
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-83Y4RSJ6YT"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-83Y4RSJ6YT');
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-83Y4RSJ6YT');
 </script>
-</head><body><div class="w sm">
- <div class="top"><a class="back" href="index.html">‹ Voltar</a></div>
- <h1 style="margin-top:14px">ℹ️ Informações</h1>
 
- <div class="hero" style="margin-top:12px;background:linear-gradient(135deg,#0f766e,#16a34a)">
+<style>
+/* CORREÇÃO GERAL PARA MOBILE */
+html {
+ width: 100%;
+ max-width: 100%;
+ overflow-x: hidden;
+ -webkit-text-size-adjust: 100%;
+}
+
+body {
+ width: 100%;
+ max-width: 100%;
+ margin: 0;
+ overflow-x: hidden;
+ background: #f1f5f3;
+}
+
+*, *::before, *::after {
+ box-sizing: border-box;
+}
+
+.w.sm {
+ width: 100% !important;
+ max-width: 600px !important;
+ min-width: 0 !important;
+ margin: 0 auto !important;
+ padding: 16px !important;
+}
+
+.w.sm * {
+ min-width: 0;
+}
+
+.w.sm p,
+.w.sm h1,
+.w.sm h2,
+.w.sm small,
+.w.sm b,
+.w.sm a {
+ overflow-wrap: anywhere;
+ white-space: normal;
+}
+
+/* CABEÇALHO */
+.info-title {
+ font-size: clamp(25px, 7vw, 32px);
+ font-weight: 800;
+ line-height: 1.2;
+ margin: 22px 0 18px;
+ color: #10251b;
+}
+
+.info-back {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ padding: 11px 18px;
+ background: #ffffff;
+ color: #183528;
+ border-radius: 14px;
+ text-decoration: none;
+ font-size: 15px;
+ font-weight: 600;
+ box-shadow: 0 3px 12px rgba(0,0,0,.06);
+}
+
+/* PRIVACIDADE */
+.info-hero {
+ width: 100%;
+ padding: 22px 20px;
+ border-radius: 22px;
+ background: linear-gradient(135deg,#0f766e,#16a34a);
+ color: #ffffff;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ box-shadow: 0 8px 22px rgba(15,118,110,.12);
+}
+
+.info-hero small {
+ font-size: 14px;
+ line-height: 1.5;
+ color: #ffffff;
+}
+
+.info-hero strong {
+ display: block;
+ font-size: clamp(20px, 5.5vw, 25px);
+ line-height: 1.3;
+ font-weight: 800;
+ color: #ffffff;
+}
+
+/* CARTÕES */
+.info-card {
+ width: 100%;
+ padding: 21px 19px;
+ margin-top: 15px;
+ background: #ffffff;
+ border-radius: 22px;
+ box-shadow: 0 4px 18px rgba(0,0,0,.055);
+}
+
+.info-card h2 {
+ margin: 0 0 16px;
+ font-size: 20px;
+ line-height: 1.35;
+ color: #142b20;
+}
+
+.info-card p {
+ margin: 0 0 14px;
+ font-size: 15px;
+ line-height: 1.65;
+ color: #263b30;
+}
+
+.info-card p:last-child {
+ margin-bottom: 0;
+}
+
+/* LISTA DE INFORMAÇÕES */
+.info-item {
+ display: flex;
+ align-items: flex-start;
+ gap: 11px;
+ margin-bottom: 17px;
+}
+
+.info-item:last-child {
+ margin-bottom: 0;
+}
+
+.info-icon {
+ flex: 0 0 30px;
+ width: 30px;
+ height: 30px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: #e2f7e9;
+ border-radius: 50%;
+ color: #07813d;
+ font-size: 16px;
+ font-weight: 800;
+}
+
+.info-item p {
+ flex: 1;
+ margin: 0;
+}
+
+/* AVISO */
+.info-warning {
+ background: #fff6df;
+ border: 1px solid #f4d891;
+}
+
+.info-warning h2 {
+ font-size: 18px;
+}
+
+/* LUMANOIDS */
+.info-brand {
+ text-align: center;
+}
+
+.info-brand h2 {
+ font-size: 19px;
+ margin-bottom: 10px;
+}
+
+.info-brand p {
+ font-size: 14px;
+ color: #64748b;
+ margin-bottom: 18px;
+}
+
+.brand-name {
+ color: #ec4899;
+ font-weight: 800;
+}
+
+/* BOTÕES */
+.info-btn {
+ display: flex !important;
+ width: 100%;
+ min-height: 55px;
+ align-items: center;
+ justify-content: center;
+ gap: 9px;
+ padding: 14px 12px;
+ margin-top: 11px;
+ border-radius: 15px;
+ text-decoration: none !important;
+ text-align: center;
+ font-size: 15px;
+ font-weight: 700;
+ line-height: 1.4;
+ color: #ffffff !important;
+ box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.info-btn.site {
+ background: linear-gradient(135deg,#16a34a,#07813d);
+}
+
+.info-btn.whats {
+ background: linear-gradient(135deg,#25d366,#128c7e);
+}
+
+/* OUTROS APLICATIVOS */
+.info-more {
+ margin-top: 17px;
+ padding: 19px;
+ border-radius: 22px;
+ background: #ffffff;
+ text-align: center;
+ box-shadow: 0 4px 18px rgba(0,0,0,.055);
+}
+
+.info-more-title {
+ display: block;
+ color: #64748b;
+ font-size: 14px;
+ margin-bottom: 12px;
+}
+
+.info-more a {
+ display: block;
+ padding: 15px 12px;
+ background: #e8f7ee;
+ color: #116534;
+ border-radius: 14px;
+ text-decoration: none;
+ font-size: 16px;
+ font-weight: 700;
+}
+
+/* RODAPÉ */
+.info-footer {
+ text-align: center;
+ padding: 23px 10px 30px;
+ font-size: 13px;
+ color: #64748b;
+}
+
+/* TELAS PEQUENAS */
+@media (max-width: 380px) {
+ .w.sm {
+  padding: 12px !important;
+ }
+
+ .info-card {
+  padding: 18px 15px;
+ }
+
+ .info-hero {
+  padding: 20px 16px;
+ }
+
+ .info-card p {
+  font-size: 14px;
+ }
+
+ .info-btn {
+  font-size: 14px;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<div class="w sm">
+
+ <!-- VOLTAR -->
+ <div class="top">
+  <a class="info-back" href="index.html">
+   ‹ Voltar
+  </a>
+ </div>
+
+ <!-- TÍTULO -->
+ <h1 class="info-title">
+  ℹ️ Informações
+ </h1>
+
+ <!-- PRIVACIDADE -->
+ <div class="info-hero">
+
   <small>🔒 Sua privacidade</small>
-  <b style="font-size:20px;line-height:1.25">Seus dados financeiros ficam só no seu celular.</b>
-  <small>Contas, salário, desejos e metas nunca saem do seu aparelho.</small>
+
+  <strong>
+   Seus dados financeiros ficam
+   armazenados no seu aparelho.
+  </strong>
+
+  <small>
+   Contas, salário, desejos e metas
+   são salvos localmente no navegador.
+  </small>
+
  </div>
 
- <div class="box ex">
+ <!-- COMO FUNCIONA -->
+ <div class="info-card">
+
   <h2>Como funciona</h2>
-  <p>✅ O aplicativo <b>não coleta o que você anota</b>: contas, salário, desejos e metas.</p>
-  <p>✅ Suas contas, salário, desejos e metas ficam guardados <b>só no seu aparelho</b>.</p>
-  <p>✅ Essas informações <b>não vão para a internet</b> nem para banco de dados. Ninguém tem acesso — nem o desenvolvedor.</p>
-  <p>📊 Coletamos apenas <b>estatísticas anônimas de acesso</b> (como o número de visitas), por meio do Google Analytics.</p>
+
+  <div class="info-item">
+   <span class="info-icon">✓</span>
+   <p>
+    O aplicativo utiliza o
+    <b>armazenamento local</b>
+    para guardar suas informações financeiras.
+   </p>
+  </div>
+
+  <div class="info-item">
+   <span class="info-icon">✓</span>
+   <p>
+    Suas contas, salário, desejos e metas
+    ficam registrados
+    <b>no navegador do seu aparelho</b>.
+   </p>
+  </div>
+
+  <div class="info-item">
+   <span class="info-icon">✓</span>
+   <p>
+    Os registros financeiros são salvos
+    localmente, sem necessidade de
+    cadastro ou banco de dados.
+   </p>
+  </div>
+
+  <div class="info-item">
+   <span class="info-icon">▥</span>
+   <p>
+    Utilizamos o
+    <b>Google Analytics</b>
+    para obter estatísticas de acesso,
+    como visitas e utilização das páginas.
+    Esse serviço pode coletar dados
+    técnicos e identificadores.
+   </p>
+  </div>
+
  </div>
 
- <div class="box ex" style="background:var(--ol);border-color:#fde2a0">
-  <h2>⚠️ Cuidado ao limpar o histórico do navegador</h2>
-  <p>Se você limpar o histórico ou os dados do navegador, <b>perde tudo</b> o que anotou aqui.</p>
-  <p>Antes, vá em <b>⚙️ Configurações</b> e toque em <b>Exportar</b>. Depois, é só <b>Importar</b> para recuperar tudo.</p>
+ <!-- CUIDADO COM OS DADOS -->
+ <div class="info-card info-warning">
+
+  <h2>
+   ⚠️ Cuidado ao limpar os dados
+   do navegador
+  </h2>
+
+  <p>
+   Se você apagar os dados do site
+   no navegador, poderá
+   <b>perder as informações salvas</b>
+   no aplicativo.
+  </p>
+
+  <p>
+   Antes, acesse
+   <b>⚙️ Configurações</b>
+   e toque em <b>Exportar</b>.
+  </p>
+
+  <p>
+   Para recuperar suas informações,
+   utilize a opção <b>Importar</b>.
+  </p>
+
  </div>
 
- <div class="box ex" style="text-align:center">
-  <h2>💚 Desenvolvido por <span style="color:#ec4899">Lumanoids</span></h2>
-  <p>Para fazer pedidos, escolha uma das opções:</p>
-  <a id="site" class="bigbtn" style="text-decoration:none;margin-top:10px" target="_blank" rel="noopener" data-i="globe">Acessar o site</a>
-  <a id="wpp" class="bigbtn" style="text-decoration:none;background:linear-gradient(135deg,#25d366,#128c7e)" target="_blank" rel="noopener" data-i="whats">Chamar no WhatsApp</a>
+ <!-- CONTATO LUMANOIDS -->
+ <div class="info-card info-brand">
+
+  <h2>
+   💚 Desenvolvido por
+   <span class="brand-name">Lumanoids</span>
+  </h2>
+
+  <p>
+   Conheça nossos projetos ou
+   entre em contato para solicitar
+   novas soluções.
+  </p>
+
+  <a
+   id="site"
+   class="info-btn site"
+   href="#"
+   target="_blank"
+   rel="noopener noreferrer">
+   🌐 Acessar o site da Lumanoids
+  </a>
+
+  <a
+   id="wpp"
+   class="info-btn whats"
+   href="#"
+   target="_blank"
+   rel="noopener noreferrer">
+   💬 Chamar no WhatsApp
+  </a>
+
  </div>
 
- <div class="more">Conheça também<a id="lc" href="#" target="_blank" rel="noopener">🛒 Lista de compras</a></div>
- <div class="ft"><div class="cr">Criado por <b>Lumanoids</b></div></div>
+ <!-- OUTROS APLICATIVOS -->
+ <div class="info-more">
+
+  <span class="info-more-title">
+   Conheça também
+  </span>
+
+  <a
+   id="lc"
+   href="#"
+   target="_blank"
+   rel="noopener noreferrer">
+   🛒 Lista de compras
+  </a>
+
+ </div>
+
+ <!-- RODAPÉ -->
+ <div class="info-footer">
+  Criado por
+  <span class="brand-name">Lumanoids</span>
+ </div>
+
 </div>
+
+<!-- CONFIGURAÇÕES CENTRALIZADAS -->
 <script src="js/core.js"></script>
+
 <script>
- $('#site').href=SITE_LUMANOIDS;$('#wpp').href=WHATS_LUMANOIDS;
- $('#lc').href=LINK_COMPRAS;
+ // Links definidos no core.js
+
+ const siteBtn = document.getElementById('site');
+ const whatsBtn = document.getElementById('wpp');
+ const comprasBtn = document.getElementById('lc');
+
+ if (typeof SITE_LUMANOIDS !== 'undefined'
+     && SITE_LUMANOIDS) {
+  siteBtn.href = SITE_LUMANOIDS;
+ } else {
+  siteBtn.style.display = 'none';
+ }
+
+ if (typeof WHATS_LUMANOIDS !== 'undefined'
+     && WHATS_LUMANOIDS) {
+  whatsBtn.href = WHATS_LUMANOIDS;
+ } else {
+  whatsBtn.style.display = 'none';
+ }
+
+ if (typeof LINK_COMPRAS !== 'undefined'
+     && LINK_COMPRAS) {
+  comprasBtn.href = LINK_COMPRAS;
+ } else {
+  comprasBtn.style.display = 'none';
+ }
 </script>
-</body></html>
+
+</body>
+</html>
